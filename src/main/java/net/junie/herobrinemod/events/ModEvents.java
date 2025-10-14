@@ -49,11 +49,6 @@ public class ModEvents {
         }
     }
 
-    /**
-     * Checks the Herobrine ritual structure manually:
-     * - 3x3 base of gold blocks below the totem
-     * - 4 redstone torches around the totem (N/S/E/W)
-     */
     private static boolean isValidHerobrineStructure(Level level, BlockPos totemPos) {
         int baseY = totemPos.getY() - 1;
 
@@ -67,7 +62,6 @@ public class ModEvents {
             }
         }
 
-        // Check torches around the totem
         if (!level.getBlockState(totemPos.north()).is(Blocks.REDSTONE_TORCH)) return false;
         if (!level.getBlockState(totemPos.south()).is(Blocks.REDSTONE_TORCH)) return false;
         if (!level.getBlockState(totemPos.east()).is(Blocks.REDSTONE_TORCH)) return false;
@@ -76,14 +70,10 @@ public class ModEvents {
         return true;
     }
 
-    /**
-     * Clears all the ritual blocks after activation:
-     * - Removes gold base, torches, totem, and fire above.
-     */
     private static void clearStructure(Level level, BlockPos totemPos) {
         int baseY = totemPos.getY() - 1;
 
-        // Remove gold blocks
+
         for (int dx = -1; dx <= 1; dx++) {
             for (int dz = -1; dz <= 1; dz++) {
                 BlockPos basePos = new BlockPos(totemPos.getX() + dx, baseY, totemPos.getZ() + dz);
@@ -91,7 +81,6 @@ public class ModEvents {
             }
         }
 
-        // Remove torches
         level.setBlock(totemPos.north(), Blocks.AIR.defaultBlockState(), 3);
         level.setBlock(totemPos.south(), Blocks.AIR.defaultBlockState(), 3);
         level.setBlock(totemPos.east(), Blocks.AIR.defaultBlockState(), 3);
@@ -102,9 +91,6 @@ public class ModEvents {
         level.setBlock(totemPos.above(), Blocks.AIR.defaultBlockState(), 3);
     }
 
-    /**
-     * Spawns Herobrine at the ritual’s center.
-     */
     private static void spawnHerobrine(ServerLevel serverLevel, BlockPos spawnPos) {
         HerobrineEntity herobrine = (HerobrineEntity) ModEntities.HEROBRINE.get().create(serverLevel);
         if (herobrine != null) {
