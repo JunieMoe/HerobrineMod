@@ -1,0 +1,38 @@
+package net.junie.herobrinemod.client.renderer;
+
+import net.junie.herobrinemod.HerobrineMod;
+import net.junie.herobrinemod.entity.HerobrineEntity;
+import net.junie.herobrinemod.registry.ModEntities;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
+import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+
+@Mod.EventBusSubscriber(modid = HerobrineMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+public class ModEntityRenderers {
+
+    // Concrete renderer for Herobrine
+    public static class HerobrineRenderer extends HumanoidMobRenderer<HerobrineEntity, HumanoidModel<HerobrineEntity>> {
+        private static final ResourceLocation TEXTURE =
+                new ResourceLocation(HerobrineMod.MODID, "textures/entity/herobrine.png"); // dummy texture
+
+        public HerobrineRenderer(Context context) {
+            super(context, new HumanoidModel<>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
+        }
+
+        @Override
+        public ResourceLocation getTextureLocation(HerobrineEntity entity) {
+            return TEXTURE;
+        }
+    }
+
+    @SubscribeEvent
+    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.HEROBRINE.get(), HerobrineRenderer::new);
+    }
+}
