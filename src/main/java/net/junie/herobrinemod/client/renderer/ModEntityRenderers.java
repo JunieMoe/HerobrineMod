@@ -16,10 +16,9 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = HerobrineMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntityRenderers {
 
-    // Concrete renderer for Herobrine
     public static class HerobrineRenderer extends HumanoidMobRenderer<HerobrineEntity, HumanoidModel<HerobrineEntity>> {
         private static final ResourceLocation TEXTURE =
-                new ResourceLocation(HerobrineMod.MODID, "textures/entity/herobrine.png"); // dummy texture
+                new ResourceLocation(HerobrineMod.MODID, "textures/entity/herobrine.png");
 
         public HerobrineRenderer(Context context) {
             super(context, new HumanoidModel<>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);

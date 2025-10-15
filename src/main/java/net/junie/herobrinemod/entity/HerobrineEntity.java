@@ -16,13 +16,12 @@ import net.minecraft.world.entity.player.Player;
 public class HerobrineEntity extends Monster {
     public HerobrineEntity(EntityType<? extends HerobrineEntity> type, Level level) {
         super(type, level);
-        this.setPersistenceRequired(); // prevent despawn for testing
+        this.setPersistenceRequired();
     }
 
 
     @Override
     protected void registerGoals() {
-// Minimal/no AI. Optionally add simple goals for testing
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 0.6));
         this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 8.0f));
     }
