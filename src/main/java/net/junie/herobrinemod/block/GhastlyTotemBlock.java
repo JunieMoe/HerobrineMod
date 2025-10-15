@@ -31,6 +31,4 @@ public class GhastlyTotemBlock extends Block {
     }
 
 
-// We'll detect flame placement using the BlockEvent.FluidPlaceEvent or by listening to PlayerInteractEvent.
-// For simplicity, we won't override use() here — activation is detected globally in ModEvents when fire appears on this block.
 }

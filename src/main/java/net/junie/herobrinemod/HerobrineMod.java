@@ -10,9 +10,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-/**
- * Main mod class for HerobrineMod
- */
 @Mod(HerobrineMod.MODID)
 public class HerobrineMod {
 

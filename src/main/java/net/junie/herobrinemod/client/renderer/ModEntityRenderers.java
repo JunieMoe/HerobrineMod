@@ -5,7 +5,6 @@ import net.junie.herobrinemod.entity.HerobrineEntity;
 import net.junie.herobrinemod.registry.ModEntities;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ public class ModEntityRenderers {
 
     public static class HerobrineRenderer extends HumanoidMobRenderer<HerobrineEntity, HumanoidModel<HerobrineEntity>> {
         private static final ResourceLocation TEXTURE =
-                new ResourceLocation(HerobrineMod.MODID, "textures/entity/herobrine.png");
+                new ResourceLocation(HerobrineMod.MODID, "assets/herobrinemod/textures/entity/herobrine/herobrine.png");
 
         public HerobrineRenderer(Context context) {
             super(context, new HumanoidModel<>(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
