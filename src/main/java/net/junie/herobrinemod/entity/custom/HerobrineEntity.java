@@ -1,12 +1,9 @@
-package net.junie.herobrinemod.entity;
+package net.junie.herobrinemod.entity.custom;
 
-import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;

@@ -1,6 +1,7 @@
 package net.junie.herobrinemod.registry;
 
 import net.junie.herobrinemod.HerobrineMod;
+import net.junie.herobrinemod.block.GhastlySkullBlock;
 import net.junie.herobrinemod.block.GhastlyTotemBlock;
 import net.junie.herobrinemod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -34,6 +35,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> GHASTLY_TOTEM = registerBlock("ghastly_totem",
             () -> new GhastlyTotemBlock(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)));
+
+    public  static final RegistryObject<Block> GHASTLY_SKULL = registerBlock("ghastly_skull",
+            () -> new GhastlySkullBlock(BlockBehaviour.Properties.copy(Blocks.WITHER_SKELETON_SKULL)));
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);

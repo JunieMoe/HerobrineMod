@@ -1,7 +1,7 @@
-package net.junie.herobrinemod.registry;
+package net.junie.herobrinemod.entity;
 
 import net.junie.herobrinemod.HerobrineMod;
-import net.junie.herobrinemod.entity.HerobrineEntity;
+import net.junie.herobrinemod.entity.custom.HerobrineEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;

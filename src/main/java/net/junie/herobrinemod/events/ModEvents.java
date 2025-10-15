@@ -1,9 +1,8 @@
 package net.junie.herobrinemod.events;
 
-import net.junie.herobrinemod.HerobrineMod;
-import net.junie.herobrinemod.registry.ModEntities;
+import net.junie.herobrinemod.entity.ModEntities;
 import net.junie.herobrinemod.registry.ModBlocks;
-import net.junie.herobrinemod.entity.HerobrineEntity;
+import net.junie.herobrinemod.entity.custom.HerobrineEntity;
 
 
 import net.minecraft.core.BlockPos;
@@ -15,10 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 
-/**
- * Handles detecting the Herobrine ritual structure and spawning the entity.
- * Compatible with Parchment mappings (no BlockPattern usage).
- */
+
 @Mod.EventBusSubscriber(modid = "herobrinemod", bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
 
