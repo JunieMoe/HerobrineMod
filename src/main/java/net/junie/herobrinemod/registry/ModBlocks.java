@@ -6,9 +6,12 @@ import net.junie.herobrinemod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -29,12 +32,10 @@ public class ModBlocks {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    public static final RegistryObject<Block> GHASTLY_TOTEM = BLOCKS.register("ghastly_totem",
-            () -> new GhastlyTotemBlock(BlockBehaviour.Properties
-                    .of()
-                    .mapColor(MapColor.COLOR_PURPLE)
-                    .strength(3.0F, 9.0F)
-                    .sound(SoundType.STONE)
-                    .lightLevel(state -> 6)
-            ));
+    public static final RegistryObject<Block> GHASTLY_TOTEM = registerBlock("ghastly_totem",
+            () -> new GhastlyTotemBlock(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)));
+
+    public static void register(IEventBus eventBus){
+        BLOCKS.register(eventBus);
+    }
 }
