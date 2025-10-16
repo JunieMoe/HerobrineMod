@@ -5,6 +5,11 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
 public class MobModelLayers {
-    public static final ModelLayerLocation HEROBRINE_LAYER = new ModelLayerLocation(
-            new ResourceLocation(HerobrineMod.MODID, "herobrine_layer"), "main");
+    public static final ModelLayerLocation HEROBRINE_LAYER =
+            new ModelLayerLocation(new ResourceLocation(HerobrineMod.MODID, "herobrine_layer"), "main");
+
+    public static final ModelLayerLocation GHASTLY_SKULL_LAYER =
+            new ModelLayerLocation(new ResourceLocation(HerobrineMod.MODID, "ghastly_skull"), "main");
+
+
 }
