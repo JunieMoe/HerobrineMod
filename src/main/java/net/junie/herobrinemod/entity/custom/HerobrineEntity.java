@@ -11,7 +11,7 @@ import net.minecraft.world.entity.player.Player;
 
 
 public class HerobrineEntity extends Monster {
-    public HerobrineEntity(EntityType<? extends HerobrineEntity> type, Level level) {
+    public HerobrineEntity(EntityType<? extends Monster> type, Level level) {
         super(type, level);
         this.setPersistenceRequired();
     }

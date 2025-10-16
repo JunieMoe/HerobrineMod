@@ -7,12 +7,13 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
-public class HerobrineRenderer extends HumanoidMobRenderer<HerobrineEntity, HumanoidModel<HerobrineEntity>> {
+public class HerobrineRenderer extends MobRenderer<HerobrineEntity, HerobrineModel<HerobrineEntity>> {
 
     public HerobrineRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new HumanoidModel<>(pContext.bakeLayer(MobModelLayers.HEROBRINE_LAYER)), 0.5f);
+        super(pContext, new HerobrineModel<>(pContext.bakeLayer(MobModelLayers.HEROBRINE_LAYER)), 0.5f);
     }
 
     @Override

@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "minecraft:block/skull"
-    }
+    "rotation=0": { "model": "herobrinemod:block/ghastly_skull" }
   }
 }
