@@ -32,9 +32,14 @@ public class HerobrineMod {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event){
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.GHASTLY_TOTEM);
             event.accept(ModBlocks.GHASTLY_SKULL);
+        }
+        //adds herobrine sword to the creative mode tab for combat
+        if(event.getTabKey() == CreativeModeTabs.COMBAT)
+        {
+            event.accept(ModItems.HEROBRINE_SWORD);
         }
     }
 
