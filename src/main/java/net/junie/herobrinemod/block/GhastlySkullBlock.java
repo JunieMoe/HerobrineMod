@@ -1,6 +1,10 @@
 package net.junie.herobrinemod.block;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SkullBlock;
 import net.minecraft.world.level.block.Rotation;
@@ -10,6 +14,9 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.MapColor;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class GhastlySkullBlock extends SkullBlock {
     public static final SkullBlock.Type GHASTLY_TYPE = new SkullBlock.Type() {
@@ -27,6 +34,12 @@ public class GhastlySkullBlock extends SkullBlock {
                 .strength(1.0F)
                 .noOcclusion());
         this.registerDefaultState(this.stateDefinition.any().setValue(ROTATION, 0));
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
+        pTooltip.add(Component.translatable("tooltip.herobrinemod.ghastly_skull"));
+        super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     }
 
     @Override

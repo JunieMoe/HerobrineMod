@@ -1,4 +1,6 @@
 {
   "block.herobrinemod.ghastly_totem": "Ghastly Totem",
-  "block.herobrinemod.ghastly_skull": "Ghastly Skull"
+  "block.herobrinemod.ghastly_skull": "Ghastly Skull",
+
+  "tooltip.herobrinemod.ghastly_skull": "The skull of a ghastly foe. Reacts oddly around netherrack."
 }
