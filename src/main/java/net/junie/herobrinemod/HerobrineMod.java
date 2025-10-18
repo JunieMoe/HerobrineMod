@@ -1,6 +1,8 @@
 package net.junie.herobrinemod;
 
 import net.junie.herobrinemod.entity.client.HerobrineRenderer;
+import net.junie.herobrinemod.entity.client.MikuRenderer;
+import net.junie.herobrinemod.entity.client.TetoRenderer;
 import net.junie.herobrinemod.item.ModItems;
 import net.junie.herobrinemod.registry.ModBlocks;
 import net.junie.herobrinemod.entity.ModEntities;
@@ -48,6 +50,8 @@ public class HerobrineMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
             EntityRenderers.register(ModEntities.HEROBRINE.get(), HerobrineRenderer::new);
+            EntityRenderers.register(ModEntities.MIKU.get(), MikuRenderer::new);
+            EntityRenderers.register(ModEntities.TETO.get(), TetoRenderer::new);
         }
     }
 }

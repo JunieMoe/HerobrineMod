@@ -2,6 +2,8 @@ package net.junie.herobrinemod.entity;
 
 import net.junie.herobrinemod.HerobrineMod;
 import net.junie.herobrinemod.entity.custom.HerobrineEntity;
+import net.junie.herobrinemod.entity.custom.MikuEntity;
+import net.junie.herobrinemod.entity.custom.TetoEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,7 +18,6 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, HerobrineMod.MODID);
 
-    // Herobrine entity registration
     public static final RegistryObject<EntityType<HerobrineEntity>> HEROBRINE =
             ENTITIES.register("herobrine",
                     () -> EntityType.Builder.of(HerobrineEntity::new, MobCategory.MONSTER)
@@ -24,10 +25,19 @@ public class ModEntities {
                             .build("herobrine")
             );
 
-    // Attribute supplier for Herobrine
-    public static AttributeSupplier.Builder createAttributes() {
-        return HerobrineEntity.createAttributes();
-    }
+    public static final RegistryObject<EntityType<MikuEntity>> MIKU =
+            ENTITIES.register("miku",
+                    () -> EntityType.Builder.of(MikuEntity::new, MobCategory.MONSTER)
+                            .sized(0.6f, 2.5f) // width, height
+                            .build("miku")
+            );
+
+    public static final RegistryObject<EntityType<TetoEntity>> TETO =
+            ENTITIES.register("teto",
+                    () -> EntityType.Builder.of(TetoEntity::new, MobCategory.MONSTER)
+                            .sized(0.6f, 2f) // width, height
+                            .build("teto")
+            );
 
     public static void register(IEventBus eventBus){
         ENTITIES.register(eventBus);

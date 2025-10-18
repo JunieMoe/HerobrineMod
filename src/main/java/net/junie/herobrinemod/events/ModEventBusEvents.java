@@ -3,6 +3,8 @@ package net.junie.herobrinemod.events;
 import net.junie.herobrinemod.HerobrineMod;
 import net.junie.herobrinemod.entity.ModEntities;
 import net.junie.herobrinemod.entity.custom.HerobrineEntity;
+import net.junie.herobrinemod.entity.custom.MikuEntity;
+import net.junie.herobrinemod.entity.custom.TetoEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,5 +15,7 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event){
         event.put(ModEntities.HEROBRINE.get(), HerobrineEntity.createAttributes().build());
+        event.put(ModEntities.MIKU.get(), MikuEntity.createAttributes().build());
+        event.put(ModEntities.TETO.get(), TetoEntity.createAttributes().build());
     }
 }
