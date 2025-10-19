@@ -36,8 +36,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> GHASTLY_TOTEM = registerBlock("ghastly_totem",
             () -> new GhastlyTotemBlock(BlockBehaviour.Properties.copy(Blocks.NETHERRACK)));
 
-    public static final RegistryObject<Block> GHASTLY_SKULL =
-            registerBlock("ghastly_skull", GhastlySkullBlock::new);
 
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);

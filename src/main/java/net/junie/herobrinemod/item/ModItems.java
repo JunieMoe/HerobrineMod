@@ -16,6 +16,10 @@ public class ModItems {
             "herobrine_sword",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> GHASTLY_SKULL = ITEMS.register(
+            "ghastly_skull",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

@@ -1,7 +1,0 @@
-{
-  "parent": "block/template_skull",
-  "textures": {
-    "particle": "herobrinemod:block/ghastly_skull",
-    "texture": "herobrinemod:block/ghastly_skull"
-  }
-}

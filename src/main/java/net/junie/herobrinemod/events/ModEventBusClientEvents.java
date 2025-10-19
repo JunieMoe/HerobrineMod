@@ -14,7 +14,6 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(MobModelLayers.HEROBRINE_LAYER, HerobrineModel::createBodyLayer);
         event.registerLayerDefinition(MobModelLayers.MIKU_LAYER, MikuModel::createBodyLayer);
         event.registerLayerDefinition(MobModelLayers.TETO_LAYER, TetoModel::createBodyLayer);
-        event.registerLayerDefinition(MobModelLayers.GHASTLY_SKULL_LAYER, GhastlySkullModel::createBodyLayer);
     }
 
 }

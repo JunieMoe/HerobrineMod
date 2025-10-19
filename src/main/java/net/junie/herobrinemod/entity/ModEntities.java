@@ -21,21 +21,21 @@ public class ModEntities {
     public static final RegistryObject<EntityType<HerobrineEntity>> HEROBRINE =
             ENTITIES.register("herobrine",
                     () -> EntityType.Builder.of(HerobrineEntity::new, MobCategory.MONSTER)
-                            .sized(0.6f, 1.95f) // width, height
+                            .sized(0.6f, 1.95f)
                             .build("herobrine")
             );
 
     public static final RegistryObject<EntityType<MikuEntity>> MIKU =
             ENTITIES.register("miku",
                     () -> EntityType.Builder.of(MikuEntity::new, MobCategory.MONSTER)
-                            .sized(0.6f, 2.5f) // width, height
+                            .sized(0.6f, 2.5f)
                             .build("miku")
             );
 
     public static final RegistryObject<EntityType<TetoEntity>> TETO =
             ENTITIES.register("teto",
                     () -> EntityType.Builder.of(TetoEntity::new, MobCategory.MONSTER)
-                            .sized(0.6f, 2f) // width, height
+                            .sized(0.6f, 2f)
                             .build("teto")
             );
 

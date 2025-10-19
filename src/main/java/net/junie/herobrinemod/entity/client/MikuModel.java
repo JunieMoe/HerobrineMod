@@ -15,8 +15,6 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.Entity;
 
 public class MikuModel<T extends Entity> extends HierarchicalModel<T> {
-	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-
 	private final ModelPart body;
 	private final ModelPart head;
 	private final ModelPart hat;
