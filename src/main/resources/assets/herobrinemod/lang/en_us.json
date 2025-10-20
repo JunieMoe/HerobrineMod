@@ -1,6 +1,8 @@
 {
   "block.herobrinemod.ghastly_totem": "Ghastly Totem",
-  "block.herobrinemod.ghastly_skull": "Ghastly Skull",
+  "item.herobrinemod.ghastly_skull": "Ghastly Skull",
+  "entity.herobrinemod.teto": "Kasane -Fucking- Teto",
+  "entity.herobrinemod.miku": "Hatsune -Fucking- Miku",
 
   "tooltip.herobrinemod.ghastly_skull": "The skull of a ghastly foe. Reacts oddly around netherrack."
 }

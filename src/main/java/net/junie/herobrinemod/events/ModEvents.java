@@ -1,15 +1,20 @@
 package net.junie.herobrinemod.events;
 
 import net.junie.herobrinemod.entity.ModEntities;
+import net.junie.herobrinemod.entity.custom.MikuEntity;
+import net.junie.herobrinemod.entity.custom.TetoEntity;
 import net.junie.herobrinemod.registry.ModBlocks;
 import net.junie.herobrinemod.entity.custom.HerobrineEntity;
 
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.Endermite;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.event.entity.EntityStruckByLightningEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -99,5 +104,35 @@ public class ModEvents {
             );
             serverLevel.addFreshEntity(herobrine);
         }
+    }
+
+    @SubscribeEvent
+    public static void onEntityStruckByLightning(EntityStruckByLightningEvent event) {
+        if (!(event.getEntity() instanceof EnderMan enderMan)) {
+            return;
+        }
+
+        Level level = event.getEntity().level();
+        if (level.isClientSide()) {
+            return;
+        }
+
+        double x = event.getEntity().getX();
+        double y = event.getEntity().getY();
+        double z = event.getEntity().getZ();
+
+        TetoEntity teto = ModEntities.TETO.get().create(level);
+        if (teto != null) {
+            teto.moveTo(x + 1, y, z, level.random.nextFloat() * 360F, 0F);
+            level.addFreshEntity(teto);
+        }
+
+        MikuEntity miku = ModEntities.MIKU.get().create(level);
+        if (miku != null) {
+            miku.moveTo(x - 1, y, z, level.random.nextFloat() * 360F, 0F);
+            level.addFreshEntity(miku);
+        }
+
+        event.getEntity().discard();
     }
 }
