@@ -7,7 +7,7 @@ import net.junie.herobrinemod.entity.client.TetoRenderer;
 import net.junie.herobrinemod.item.ModItems;
 import net.junie.herobrinemod.registry.ModBlocks;
 import net.junie.herobrinemod.entity.ModEntities;
-
+import net.junie.herobrinemod.sound.ModSounds;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,6 +30,7 @@ public class HerobrineMod {
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
         ModItems.register(modEventBus);
+        ModSounds.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
     }

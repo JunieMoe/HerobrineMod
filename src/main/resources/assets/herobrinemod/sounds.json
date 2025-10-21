@@ -1,0 +1,7 @@
+{
+  "music.boss.herobrinetheme": {
+    "sounds": [
+      { "name": "herobrinemod:music/boss/herobrinetheme", "stream": true }
+    ]
+  }
+}

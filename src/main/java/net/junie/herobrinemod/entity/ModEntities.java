@@ -28,7 +28,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<BrotherEntity>> BROTHER =
             ENTITIES.register("brother",
-                    () -> EntityType.Builder.of(BrotherEntity::new, MobCategory.MISC)
+                    () -> EntityType.Builder.of(BrotherEntity::new, MobCategory.MONSTER)
                             .sized(0.6f, 1.95f)
                             .build("brother")
             );

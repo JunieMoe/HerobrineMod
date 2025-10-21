@@ -1,6 +1,7 @@
 package net.junie.herobrinemod.events;
 
 import net.junie.herobrinemod.entity.ModEntities;
+import net.junie.herobrinemod.entity.custom.BrotherEntity;
 import net.junie.herobrinemod.entity.custom.MikuEntity;
 import net.junie.herobrinemod.entity.custom.TetoEntity;
 import net.junie.herobrinemod.registry.ModBlocks;
@@ -94,7 +95,8 @@ public class ModEvents {
 
     private static void spawnHerobrine(ServerLevel serverLevel, BlockPos spawnPos) {
         HerobrineEntity herobrine = (HerobrineEntity) ModEntities.HEROBRINE.get().create(serverLevel);
-        if (herobrine != null) {
+        BrotherEntity brother = (BrotherEntity) ModEntities.BROTHER.get().create(serverLevel);
+        if (herobrine != null && brother != null) {
             herobrine.moveTo(
                     spawnPos.getX() + 0.5,
                     spawnPos.getY(),
@@ -102,7 +104,15 @@ public class ModEvents {
                     serverLevel.random.nextFloat() * 360F,
                     0.0F
             );
+            brother.moveTo(
+                    spawnPos.getX() + 1,
+                    spawnPos.getY(),
+                    spawnPos.getZ() + 1,
+                    serverLevel.random.nextFloat() * 360F,
+                    0.0F
+            );
             serverLevel.addFreshEntity(herobrine);
+            serverLevel.addFreshEntity(brother);
         }
     }
 
