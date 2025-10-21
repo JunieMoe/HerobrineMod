@@ -12,6 +12,7 @@ public class ModEventBusClientEvents {
     @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(MobModelLayers.HEROBRINE_LAYER, HerobrineModel::createBodyLayer);
+        event.registerLayerDefinition(MobModelLayers.BROTHER_LAYER, BrotherModel::createBodyLayer);
         event.registerLayerDefinition(MobModelLayers.MIKU_LAYER, MikuModel::createBodyLayer);
         event.registerLayerDefinition(MobModelLayers.TETO_LAYER, TetoModel::createBodyLayer);
     }

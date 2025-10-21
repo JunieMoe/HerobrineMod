@@ -1,6 +1,7 @@
 package net.junie.herobrinemod.entity;
 
 import net.junie.herobrinemod.HerobrineMod;
+import net.junie.herobrinemod.entity.custom.BrotherEntity;
 import net.junie.herobrinemod.entity.custom.HerobrineEntity;
 import net.junie.herobrinemod.entity.custom.MikuEntity;
 import net.junie.herobrinemod.entity.custom.TetoEntity;
@@ -23,6 +24,13 @@ public class ModEntities {
                     () -> EntityType.Builder.of(HerobrineEntity::new, MobCategory.MONSTER)
                             .sized(0.6f, 1.95f)
                             .build("herobrine")
+            );
+
+    public static final RegistryObject<EntityType<BrotherEntity>> BROTHER =
+            ENTITIES.register("brother",
+                    () -> EntityType.Builder.of(BrotherEntity::new, MobCategory.MISC)
+                            .sized(0.6f, 1.95f)
+                            .build("brother")
             );
 
     public static final RegistryObject<EntityType<MikuEntity>> MIKU =
